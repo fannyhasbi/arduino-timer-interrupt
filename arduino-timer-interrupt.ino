@@ -22,6 +22,10 @@ void setup() {
   lcd.begin(16, 2);
   lcd.setCursor(0, 0);
   lcd.print("Timer Interrupt");
+  lcd.setCursor(0, 1);
+  lcd.print("    Timer 1");
+  delay(2000);
+  lcd.clear();
 
   noInterrupts();
 
@@ -58,5 +62,11 @@ void loop() {
     }
   }
 
+  lcd.setCursor(0, 0);
+  lcd.print("ctr  : ");
+  lcd.print(counter);
+  lcd.setCursor(0, 1);
+  lcd.print("TCNT1: ");
+  lcd.print(TCNT1);
   Serial.println(counter);
 }
