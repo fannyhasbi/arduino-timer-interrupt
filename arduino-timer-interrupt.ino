@@ -15,6 +15,21 @@ void setup() {
   pinMode(ledPin, OUTPUT);
   pinMode(risePin, INPUT);
   pinMode(lowPin, INPUT);
+
+  noInterrupts();
+
+  TCCR1A = 0;
+  TCCR1B = 0;
+
+  TCNT1 = counter;
+
+  // set prescaler value to 1024
+  TCCR1B |= (1 << CS10) | (1 << CS12);
+
+  // enable global timer1 overflow flag
+  TIMSK1 |= (1 << TOIE1);
+
+  interrupts();
 }
 
 void loop() {
