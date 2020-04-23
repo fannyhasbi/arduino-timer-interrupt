@@ -31,6 +31,12 @@ void setup() {
   interrupts();
 }
 
+ISR(TIMER1_OVF_vect) {
+  TCNT1 = counter;
+
+  digitalWrite(ledPin, digitalRead(ledPin) ^ 1);
+}
+
 void loop() {
   if (digitalRead(risePin) == HIGH) {
     counter += 100;
