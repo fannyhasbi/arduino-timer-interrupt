@@ -1,6 +1,10 @@
+#include <LiquidCrystal.h>
+
 const int ledPin = 5;
 const int risePin = 2;
 const int lowPin = 4;
+const int rs = 8, en = 9, d4 = 10, d5 = 11, d6 = 12, d7 = 13;
+LiquidCrystal lcd(rs, en, d4, d5, d6, d7);
 
 // 16MHz = 16x10^6 Hz
 // max of 0xFFFF is 65535
@@ -15,11 +19,14 @@ void setup() {
   pinMode(risePin, INPUT);
   pinMode(lowPin, INPUT);
 
+  lcd.begin(16, 2);
+  lcd.setCursor(0, 0);
+  lcd.print("Timer Interrupt");
+
   noInterrupts();
 
   TCCR1A = 0;
   TCCR1B = 0;
-
   TCNT1 = counter;
 
   // set prescaler value to 1024
