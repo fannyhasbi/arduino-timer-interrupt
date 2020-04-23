@@ -14,8 +14,17 @@ Simple concept implementation of using Timer 1 registers and ISR in arduino uno
 * Jumper cables
 
 ## Pin Configuration
+### Arduino Uno
+| Arduino pins | to |
+|---|---|
+| 2 | push button through 1kΩ pull-down resistor |
+| 4 | push button through 1kΩ pull-down resistor |
+| 5 | LED through 220Ω resistor |
+| 5V | Breadboard (+) |
+| GND | Breadboard (-) |
+
 ### LCD
-| LCD pins | Arduino |
+| LCD pins | Arduino pins |
 |---|---|
 | VSS | +5V |
 | VDD | GND |
