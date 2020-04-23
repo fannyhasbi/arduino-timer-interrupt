@@ -1,8 +1,13 @@
 # arduino timer interrupt
 Simple concept implementation of using Timer 1 registers and ISR in arduino uno
 
+* [Circuit Scheme](#circuit-scheme)
+* [Pin Configuration](#pin-configuration)
+  * [Arduino Uno](#arduino-uno)
+  * [LCD](#lcd)
+
 ## Circuit Scheme
-![](./board.png)
+![Timer1 Arduino Uno Circuit Scheme](./board.png)
 
 ## Components
 * Arduino Uno board (ATMega328P microcontroller)
