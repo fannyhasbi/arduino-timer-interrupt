@@ -40,9 +40,15 @@ ISR(TIMER1_OVF_vect) {
 void loop() {
   if (digitalRead(risePin) == HIGH) {
     counter += 100;
+    if (counter >= 65535) {
+      counter = 65535;
+    }
   }
   if (digitalRead(lowPin) == HIGH) {
     counter -= 100;
+    if (counter <= 0) {
+      counter = 0;
+    }
   }
 
   Serial.println(counter);
