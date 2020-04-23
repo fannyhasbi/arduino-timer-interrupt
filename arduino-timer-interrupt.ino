@@ -10,7 +10,6 @@ float counter = 34285; // 2 seconds
 void setup() {
   Serial.begin(9600);
   Serial.println("Timer Interrupt");
-  Serial.println(counter);
 
   pinMode(ledPin, OUTPUT);
   pinMode(risePin, INPUT);
@@ -34,9 +33,11 @@ void setup() {
 
 void loop() {
   if (digitalRead(risePin) == HIGH) {
-    digitalWrite(ledPin, HIGH);
+    counter += 100;
   }
   if (digitalRead(lowPin) == HIGH) {
-    digitalWrite(ledPin, LOW);
+    counter -= 100;
   }
+
+  Serial.println(counter);
 }
