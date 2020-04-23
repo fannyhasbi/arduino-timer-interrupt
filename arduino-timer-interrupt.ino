@@ -1,5 +1,6 @@
 const int ledPin = 5;
 const int risePin = 2;
+const int lowPin = 4;
 
 void setup() {
   Serial.begin(9600);
@@ -7,13 +8,14 @@ void setup() {
 
   pinMode(ledPin, OUTPUT);
   pinMode(risePin, INPUT);
+  pinMode(lowPin, INPUT);
 }
 
 void loop() {
   if (digitalRead(risePin) == HIGH) {
     digitalWrite(ledPin, HIGH);
   }
-  else {
+  if (digitalRead(lowPin) == HIGH) {
     digitalWrite(ledPin, LOW);
   }
 }
